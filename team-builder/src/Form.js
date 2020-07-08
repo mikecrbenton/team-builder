@@ -1,20 +1,31 @@
-import React, { useState }  from 'react';
+import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
 import DisplayMembers from './DisplayMembers'
 import './App.css';
 
 function Form( { addMember, memberToEdit } ) {
 
-   // STATE
+   // STATE OF INDIVIDUAL MEMBER
    const [teamMember, setTeamMember] = useState(
       {   name : "",
           email : "",
           role : "" 
        }
    )
+   //--------------------------------------------    
+   // USE-EFFECT FOR EDIT 
+   useEffect( () => {
+      console.log("use effect is working")
+      setTeamMember( {
+         ...teamMember,
+         memberToEdit
+      } )
+   },[memberToEdit])
+   //---------------------------------------------
 
    // ONCHANGE
    const handleChanges = (e) => {
+
      setTeamMember( {
          ...teamMember,
          [e.target.name]: e.target.value
@@ -34,6 +45,7 @@ function Form( { addMember, memberToEdit } ) {
          role : "" 
        } );    
    }
+
 
   return (
     <div className="App">

@@ -5,26 +5,29 @@ import './App.css';
 
 function App() {
 
-   // SET STATE OF THE OBJECT IN TOP LEVEL
+   // SET STATE OF THE FIRST OBJECT IN THE LIST IN TOP LEVEL
    const [teamList, setTeamList] = useState(   [
     { name : "Mike Benton",
       email : "mikecrbenton@gmail.com",
       role : "Web Development Student" 
     } ] );
 
+
    // EDIT FUNCTIONALITY ( STRETCH GOAL )---------------------
-   const [memberToEdit, setMemberToEdit] = useState(
-      { name : "",
-        email : "",
-        role : "" 
-    }
+   const [memberToEdit, setMemberToEdit] = useState([{
+      name : "Mike Benton",
+      email : "mikecrbenton@gmail.com",
+      role : "Web Development Student" 
+    }]
    )
-   const editMember = ( e ) => {
-      console.log(e.target.name)
+   const editMember = () => {
+
       setMemberToEdit( {
          ...memberToEdit,
-         [e.target.name]: e.target.value
-      } )
+         name :  document.getElementById("name-value").innerHTML.toString(),
+         email : document.getElementById("email-value").innerHTML.toString(),
+         role : document.getElementById("role-value").innerHTML.toString()
+       } )
       console.log(memberToEdit);
    }
    //--------------------------------------------------------
@@ -34,7 +37,7 @@ function App() {
   const addMember = ( member ) => {
      setTeamList( [...teamList, member ] )
   }  
-  //****************I took teamList={teamList} out of Form 7/7/20 erase this if I didn't need it */
+ 
   return (
     <div className="App">
        <Form  addMember={addMember} setMemberToEdit={memberToEdit}/>

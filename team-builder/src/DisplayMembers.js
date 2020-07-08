@@ -3,22 +3,18 @@ import styled from 'styled-components';
 
 function DisplayMembers( { teamList, editMember } ) {
 
-   const submitHandler = (e) => {
-      e.preventDefault();
-      editMember(e);
-   }
+  
+   
 
    return (
       <div>
-         {teamList.map( member => (
-            <form onSubmit={submitHandler}>
+         {teamList.map( member => (  
                <DisplayCard key={member.name}>
-                  <p name="name"><BoldStyle>Name: </BoldStyle>{member.name}</p>
-                  <p><BoldStyle>Email: </BoldStyle>{member.email}</p>
-                  <p><BoldStyle>Role: </BoldStyle>{member.role}</p>
-                  <button>Edit</button>
-               </DisplayCard>
-            </form>
+                  <p><BoldStyle>Name: </BoldStyle><span id="name-value">{member.name}</span></p>
+                  <p><BoldStyle>Email: </BoldStyle><span id="email-value">{member.email}</span></p>
+                  <p><BoldStyle>Role: </BoldStyle><span id="role-value">{member.role}</span></p>
+                  <button onClick={editMember}>Edit</button>
+               </DisplayCard>  
          ) ) }
       </div>
 )
