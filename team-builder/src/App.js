@@ -32,8 +32,9 @@ function App() {
    }
    //--------------------------------------------------------
 
-  // SET THE CURRENT OBJECT TO THE STATE OF THE ENTIRE LISTER
-  // THIS IS PASSED INTO FORM.JS
+ 
+  // SET TEAM LIST IS AN ARRAY OF OBJECTS - ...SPREAD THE ALREADY
+  // EXISTING OBJECTS AND ADD THE NEWEST OBJECT
   const addMember = ( member ) => {
      setTeamList( [...teamList, member ] )
   }  

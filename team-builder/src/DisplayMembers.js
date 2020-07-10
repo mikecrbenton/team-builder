@@ -10,9 +10,9 @@ function DisplayMembers( { teamList, editMember } ) {
       <div>
          {teamList.map( member => (  
                <DisplayCard key={member.name}>
-                  <p><BoldStyle>Name: </BoldStyle><span id="name-value">{member.name}</span></p>
-                  <p><BoldStyle>Email: </BoldStyle><span id="email-value">{member.email}</span></p>
-                  <p><BoldStyle>Role: </BoldStyle><span id="role-value">{member.role}</span></p>
+                  <p><Bold>Name: </Bold><span id="name-value">{member.name}</span></p>
+                  <p><Bold>Email: </Bold><span id="email-value">{member.email}</span></p>
+                  <p><Bold>Role: </Bold><span id="role-value">{member.role}</span></p>
                   <button onClick={editMember}>Edit</button>
                </DisplayCard>  
          ) ) }
@@ -30,7 +30,9 @@ margin: 2em auto;
 padding: 1em;
 `;
 
-const BoldStyle = styled.span`
+const Bold = styled.span`
    font-weight: bold;
+   font-size: 1.1rem;
+
 `;
  

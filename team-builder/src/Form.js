@@ -1,6 +1,6 @@
 import React, { useState, useEffect }  from 'react';
 import styled from 'styled-components';
-import DisplayMembers from './DisplayMembers'
+//import DisplayMembers from './DisplayMembers'
 import './App.css';
 
 function Form( { addMember, memberToEdit } ) {
@@ -39,6 +39,7 @@ function Form( { addMember, memberToEdit } ) {
       addMember(teamMember);
 
       //reset the form
+      // setTeamMember(defaultState) also an option
       setTeamMember(  
        { name : "",
          email : "",
