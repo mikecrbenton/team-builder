@@ -21,7 +21,7 @@ function App() {
     }]
    )
    const editMember = () => {
-
+      // try e.target.value 
       setMemberToEdit( {
          ...memberToEdit,
          name :  document.getElementById("name-value").innerHTML.toString(),
